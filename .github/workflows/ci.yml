@@ -1,6 +1,6 @@
-name: ci: build and push app, redis, and postgres images
+name: "ci: build and push app, redis, and postgres images"
 
-on:
+'on':
   push:
     branches: [ "main", "master" ]
 
