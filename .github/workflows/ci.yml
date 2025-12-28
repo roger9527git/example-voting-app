@@ -19,23 +19,18 @@ jobs:
           - name: vote
             context: ./app/vote
             dockerfile: ./app/vote/Dockerfile
-
           - name: result
             context: ./app/result
             dockerfile: ./app/result/Dockerfile
-
           - name: worker
             context: ./app/worker
             dockerfile: ./app/worker/Dockerfile
-
           - name: seed-data
             context: ./deploy/seed-data
             dockerfile: ./deploy/seed-data/Dockerfile
-
           - name: redis
             context: ./deploy/compose
             dockerfile: ./deploy/compose/Dockerfile.redis
-
           - name: postgres
             context: ./deploy/compose
             dockerfile: ./deploy/compose/Dockerfile.postgres
