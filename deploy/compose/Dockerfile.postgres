@@ -1,5 +1,5 @@
 FROM postgres:15-alpine
 RUN apk add --no-cache bash
-COPY ../healthchecks/postgres.sh /healthchecks/postgres.sh
+COPY deploy/healthchecks/postgres.sh /healthchecks/postgres.sh
 RUN chmod +x /healthchecks/postgres.sh
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD /healthchecks/postgres.sh

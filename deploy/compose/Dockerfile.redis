@@ -1,4 +1,4 @@
 FROM redis:alpine
-COPY ../healthchecks/redis.sh /healthchecks/redis.sh
+COPY deploy/healthchecks/redis.sh /healthchecks/redis.sh
 RUN chmod +x /healthchecks/redis.sh
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD /healthchecks/redis.sh
