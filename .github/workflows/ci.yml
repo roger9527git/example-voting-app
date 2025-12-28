@@ -12,33 +12,33 @@ jobs:
       contents: read
       packages: write
 
-strategy:
-  fail-fast: false
-  matrix:
-    include:
-      - name: vote
-        context: ./app/vote
-        dockerfile: ./app/vote/Dockerfile
+  strategy:
+    fail-fast: false
+    matrix:
+      include:
+        - name: vote
+          context: ./app/vote
+          dockerfile: ./app/vote/Dockerfile
 
-      - name: result
-        context: ./app/result
-        dockerfile: ./app/result/Dockerfile
+        - name: result
+          context: ./app/result
+          dockerfile: ./app/result/Dockerfile
 
-      - name: worker
-        context: ./app/worker
-        dockerfile: ./app/worker/Dockerfile
+        - name: worker
+          context: ./app/worker
+          dockerfile: ./app/worker/Dockerfile
 
-      - name: seed-data
-        context: ./deploy/seed-data
-        dockerfile: ./deploy/seed-data/Dockerfile
+        - name: seed-data
+          context: ./deploy/seed-data
+          dockerfile: ./deploy/seed-data/Dockerfile
 
-      - name: redis
-        context: ./deploy/compose
-        dockerfile: ./deploy/compose/Dockerfile.redis
+        - name: redis
+          context: ./deploy/compose
+          dockerfile: ./deploy/compose/Dockerfile.redis
 
-      - name: postgres
-        context: ./deploy/compose
-        dockerfile: ./deploy/compose/Dockerfile.postgres
+        - name: postgres
+          context: ./deploy/compose
+          dockerfile: ./deploy/compose/Dockerfile.postgres
 
 
     steps:
