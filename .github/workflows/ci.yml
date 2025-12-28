@@ -29,10 +29,10 @@ jobs:
             context: ./deploy/seed-data
             dockerfile: ./deploy/seed-data/Dockerfile
           - name: redis
-            context: ./deploy/compose
+            context: .
             dockerfile: ./deploy/compose/Dockerfile.redis
           - name: postgres
-            context: ./deploy/compose
+            context: .
             dockerfile: ./deploy/compose/Dockerfile.postgres
 
     steps:
